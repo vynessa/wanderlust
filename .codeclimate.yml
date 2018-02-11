@@ -13,7 +13,9 @@ engines:
 ratings:
   paths:
       - "**.rb"
+
 exclude_paths:
 - "Gemfile"
 - "Gemfile.lock"
 - .gitignore
+- "public/assets/"
