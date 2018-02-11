@@ -32,14 +32,18 @@ gem 'jbuilder', '~> 2.5'
 
 # Add devise for authentication
 gem 'devise'
+# Add bootstrap sass
+gem 'bootstrap-sass'
+# Jquery
+gem 'jquery-rails'
+# Add simplecov gem for test coverage report
+gem 'simplecov'
+# rspec junit formatter
+gem 'rspec_junit_formatter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Add simplecov gem for test coverage report
-gem 'simplecov'
-
-gem 'rspec_junit_formatter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
