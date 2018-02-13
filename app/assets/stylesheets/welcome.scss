@@ -1,21 +1,25 @@
 .welcome-page {
-  padding: 70px;
+ padding: 70px;
 }
 
 .heading {
-  color: #ffffff;
+ color: #ffffff;
 }
-
-// .welcome-header {
-//   padding: 50px;
-// }
 
 .auth-btns {
-  float: right;
-}
+ float: right;
 
-span.auth-btns a:nth-child(1) {
-  padding-right: 20px;
+  a:nth-child(1) {
+    padding-right: 20px;
+  }
+
+  a {
+    color: #ffffff;
+  }
+
+  a:hover {
+    color: #D44679;
+  }
 }
 
 .wanderlust-details {
@@ -27,5 +31,16 @@ span.auth-btns a:nth-child(1) {
     width: 50%;
     font-size: 70px;
   }
+
+  .heading {
+    margin-top: 1em;
+  }
 }
 
+.home-action-btn {
+  background-color: #D44679;
+
+  a {
+    color: #ffffff;
+  }
+}
