@@ -1,4 +1,9 @@
-.navbar .navbar-brand {
-  display: flex;
-  align-items: center;
+.navbar-default {
+  background-color: #042852 !important;
+  border: none !important;
+}
+
+.navbar-brand,
+.navbar-right li a {
+  color: #ffffff !important;
 }
