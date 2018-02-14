@@ -9,6 +9,7 @@ class TripsController < ApplicationController
 
   # GET /trips/:id
   def show
+    @activities = @trip.activities
   end
 
   # GET /trips/new
