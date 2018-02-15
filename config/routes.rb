@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :trips do
     resources :activities
+    resources :budget_items
   end
-  devise_for :users
   root to: "welcome#index", as: "index"
 end
