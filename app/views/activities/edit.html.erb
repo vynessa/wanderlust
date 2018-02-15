@@ -1,6 +1,6 @@
 <h1>Editing Activity</h1>
 
-<%= render 'form', activity: @activity %>
+<%= render 'form', trip: @trip, activity: @activity,  url: trip_activity_path(@trip) %>
 
 <%= link_to 'Show', trip_activity_path(@trip, @activity) %> |
 <%= link_to 'Back', trip_path(@trip) %>

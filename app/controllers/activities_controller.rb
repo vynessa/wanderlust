@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
-  before_action :set_trip, only: [:new, :edit, :show, :update]
+  before_action :set_trip
   before_action :authenticate_user!
 
   # GET /activities
@@ -20,10 +20,14 @@ class ActivitiesController < ApplicationController
   # POST /activities
   def create
     @activity = Activity.new(activity_params)
+    @activity.trip = @trip
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to trip_activity_path(@trip, @activity), notice: 'Activity was successfully created.' }
+        format.html {
+          redirect_to @trip,
+          notice: 'Activity was successfully created.'
+        }
       else
         format.html { render :new }
       end
@@ -34,7 +38,10 @@ class ActivitiesController < ApplicationController
   def update
     respond_to do |format|
       if @activity.update(activity_params)
-        format.html { redirect_to trip_activity_path(@trip, @activity), notice: 'Activity was successfully updated.' }
+        format.html {
+          redirect_to @trip,
+          notice: 'Activity was successfully updated.'
+        }
       else
         format.html { render :edit }
       end
@@ -44,8 +51,12 @@ class ActivitiesController < ApplicationController
   # DELETE /activities/:id
   def destroy
     @activity.destroy
+
     respond_to do |format|
-      format.html { redirect_to activities_url, notice: 'Activity was successfully destroyed.' }
+      format.html {
+        redirect_to @trip,
+        notice: 'Activity was successfully destroyed.'
+      }
     end
   end
 

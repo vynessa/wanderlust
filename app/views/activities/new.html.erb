@@ -1,5 +1,5 @@
 <h1>New Activity</h1>
 
-<%= render 'form', activity: @activity %>
+<%= render 'form', trip: @trip, activity: @activity,  url: trip_activities_path(@trip) %>
 
 <%= link_to 'Back', trip_path(@trip) %>
