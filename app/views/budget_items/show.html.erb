@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @budget_item.item %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @budget_item.description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @budget_item.cost %>
+</p>
+
+<%= link_to 'Edit', edit_trip_budget_item_path(@trip, @budget_item) %> |
+<%= link_to 'Back', trip_path(@trip)  %>
