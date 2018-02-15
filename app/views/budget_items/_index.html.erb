@@ -23,6 +23,11 @@
         <td><%= link_to 'Destroy', trip_budget_item_path(@trip, budget_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <tr colspan="3">
+      <td>
+        Total Budget: N<%= budget_cost %>
+      </td>
+    </tr>
   </tbody>
 </table>
 
