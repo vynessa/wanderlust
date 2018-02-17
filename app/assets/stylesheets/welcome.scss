@@ -1,46 +1,25 @@
-.welcome-page {
- padding: 70px;
-}
+@import 'base';
 
-.heading {
- color: #ffffff;
-}
-
-.auth-btns {
- float: right;
-
-  a:nth-child(1) {
-    padding-right: 20px;
-  }
-
-  a {
-    color: #ffffff;
-  }
-
-  a:hover {
-    color: #D44679;
-  }
+.navbar {
+  padding: 50px 0;
 }
 
 .wanderlust-details {
   p {
-    color: #ffffff;
+    color: $white;
+    font-size: 16px;
+    margin: 20px 0 50px;
   }
 
   h2 {
+    color: $white;
     width: 50%;
-    font-size: 70px;
-  }
+    font-size: 80px;
+    font-weight: 100;
+    letter-spacing: -5px;
 
-  .heading {
-    margin-top: 1em;
-  }
-}
-
-.home-action-btn {
-  background-color: #D44679;
-
-  a {
-    color: #ffffff;
+    @include respond-to(tablets) {
+      width: 65%;
+    }
   }
 }

@@ -1,16 +1,27 @@
-<div class="welcome-page">
-  <div class="welcome-header">
-    <span class="heading">Wanderlust</span>
-    <span class="auth-btns">
-      <%= link_to "LOG IN", new_user_session_path %>
-      <%= link_to "SIGN UP", new_user_registration_path %>
-    </span>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="/">Wanderlust</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Log In", new_user_session_path, class: "nav-link-upper" %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path, class: "nav-link-upper" %></li>
+      </ul>
+    </div>
   </div>
+</nav>
+
+<div class="container welcome-text">
   <div class="wanderlust-details">
-    <h2 class="heading">Your Ultimate Trip Planner</h2>
+    <h2 class="heading">Your Ultimate<br/>Trip Planner</h2>
     <p>Those who start out going nowhere usually end up nowhere</p>
-    <button class="home-action-btn">
-      <%= link_to "Plan a trip", trips_path %>
-    </button>
+    <%= link_to "Plan a trip", trips_path, class: 'button-pink' %>
   </div>
 </div>  
