@@ -14,7 +14,90 @@
  *= require_self
  */
 @import "bootstrap";
+@import "base";
+
+html,
+body {
+  height: 100%;
+}
 
 body {
-  background-color: #042852;
+  font-family: $font-family-base;
+  font-size: 14px;
+}
+
+.form-heading {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.signup-form,
+.login-form,
+.edit-user-form {
+  margin: 0 auto;
+  text-align: center !important;
+
+  p {
+    color: white;
+  }
+}
+
+.form-control {
+  width: 30% !important;
+  display: inline-block !important;
+
+  @include respond-to(handhelds) {
+    width: 60% !important;
+  }
+
+  @include respond-to(tablets) {
+    width: 50% !important;
+  }
+}
+
+.actions {
+  margin: 40px 0 40px;
+}
+
+//---------------------------
+// UTILITIES
+//---------------------------
+.logo {
+  @include logo()
+}
+
+a.navbar-brand.logo {
+  @include logo($font-size: 30px)
+}
+
+.form-heading.logo {
+  @include logo($font-size: 30px, $margin: 3em 0 1.5em)
+}
+
+.button-pink,
+a.button-pink {
+  @include buttons($palette-pink, $white);
+}
+
+.nav-link-upper {
+  @include nav-links()
+}
+
+.navbar-right li a.nav-link-lower {
+  @include nav-links($letter-spacing: 0, $text-transform: none)
+}
+
+.cityscape-bg {
+  background-image: url('cityscape.png');
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.user-auth-text {
+  @include user-auth-text()
+}
+
+.form-label {
+  @include form-label()
 }
