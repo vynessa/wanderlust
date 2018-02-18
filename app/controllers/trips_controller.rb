@@ -4,7 +4,8 @@ class TripsController < ApplicationController
 
   # GET /trips
   def index
-    @trips = current_user.trips.all
+    trips = current_user.trips
+    @trips = trips.paginate(:page => params[:page], per_page: 5)
   end
 
   # GET /trips/:id
@@ -29,7 +30,7 @@ class TripsController < ApplicationController
     respond_to do |format|
       if @trip.save
         format.html {
-          redirect_to @trip,
+          redirect_to trips_path,
           notice: 'Trip was successfully created.'
         }
       else
