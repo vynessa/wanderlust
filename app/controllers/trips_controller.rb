@@ -6,6 +6,7 @@ class TripsController < ApplicationController
   def index
     trips = current_user.trips
     @trips = trips.paginate(:page => params[:page], per_page: 5)
+    redirect_to trips_path if @trips.empty?
   end
 
   # GET /trips/:id
