@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Trip', new_trip_path %>
+<%= link_to 'New Trip', new_trip_path %><br />
+<%= will_paginate @trips, renderer: BootstrapPagination::Rails %>
+
