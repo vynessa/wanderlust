@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Add bootstrap sass
 gem 'bootstrap-sass'
+# Add pagination gem
+gem 'will_paginate'
+# Add will_paginate bootstrap gem for neater styling
+gem 'will_paginate-bootstrap'
 # Jquery
 gem 'jquery-rails'
 # Add simplecov gem for test coverage report
