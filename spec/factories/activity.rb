@@ -1,8 +1,7 @@
 FactoryBot.define do
-  factory :activities do |f|
-    f.title { Faker::StarWars.character }
-    f.status false
-    f.trip_id
-    f.budget
+  factory :activity do
+    title { Faker::StarWars.character }
+    status true
+    trip
   end
 end

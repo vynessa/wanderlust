@@ -1,10 +1,10 @@
 FactoryBot.define do
-  factory :trip do |f|
-    f.name { Faker::Internet.free_email }
-    f.description { Faker::Lorem.sentence(10) }
-    f.user_id
-    f.location
-    f.departure_date
-    f.return_date
+  factory :trip do
+    name { Faker::Internet.free_email }
+    description { Faker::Lorem.sentence(10) }
+    location "Lagos, Nigeria"
+    departure_date Date.today
+    return_date Date.today + 10.days
+    user
   end
 end
