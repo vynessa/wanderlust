@@ -8,3 +8,10 @@
 .forgot-password {
   display: none;
 }
+
+#error_explanation {
+  h2,
+  li {
+    color: $white;
+  }
+}
