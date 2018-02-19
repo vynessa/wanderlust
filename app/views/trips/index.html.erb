@@ -1,39 +1,43 @@
-<div class="options-bar">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="left-options">
-      <h3 class="title">My Trips</h3>
-    </div>
-    <div class="right-options">
-      <%= link_to 'CREATE TRIP', new_trip_path, class: "button-pink glyphicon-plus" %>
+<main class="page-content">
+  <div class="options-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="left-options">
+        <h3 class="title">My Trips</h3>
+      </div>
+      <div class="right-options">
+        <%= link_to 'CREATE TRIP', new_trip_path, class: "button-pink glyphicon-plus" %>
+      </div>
     </div>
   </div>
-</div>
-<section class="container">
-  <ul class="trip-list">
-  <% @trips.each do |trip| %>
-    <li class="trip-card shadow">
-      <a class="card-body" href="/trips/<%= trip.id %>">
-        <div class="row">
-          <div class="col-sm-6 detail">
-            <h6 class="title fat-text"><%= trip.name %></h6>
-            <p class="description"><%= trip.description %></p>
+  <section class="container">
+    <ul class="trip-list">
+    <% @trips.each do |trip| %>
+      <li class="trip-card shadow">
+        <a class="card-body" href="/trips/<%= trip.id %>">
+          <div class="row">
+            <div class="col-12 col-md-6 detail">
+              <h6 class="title fat-text"><%= trip.name %></h6>
+              <p class="description"><%= trip.description %></p>
+            </div>
+            <div class="col-4 col-md-2 detail">
+              <h6 class="header">Location:</h6>
+              <p class="description"><%= trip.location %></p>
+            </div>
+            <div class="col-4 col-md-2 detail">
+              <h6 class="header">Dates:</h6>
+              <p class="description">Dept:&nbsp;<%= trip.departure_date %><br>Return:&nbsp;<%= trip.return_date %></p>
+            </div>
+            <div class="col-4 col-md-2 detail">
+              <h6 class="header">Budget:</h6>
+              <p class="description fat-text">$300</p>
+            </div>
           </div>
-          <div class="col-sm-2 detail">
-            <h6 class="header">Location:</h6>
-            <p class="description"><%= trip.location %></p>
-          </div>
-          <div class="col-sm-2 detail">
-            <h6 class="header">Dates:</h6>
-            <p class="description">Dept:&nbsp;<%= trip.departure_date %><br>Return:&nbsp;<%= trip.return_date %></p>
-          </div>
-          <div class="col-sm-2 detail">
-            <h6 class="header">Budget:</h6>
-            <p class="description fat-text">$300</p>
-          </div>
-        </div>
-      </a>
-    </li>
-  <% end %>
-  </ul>
-</section>
-<%= will_paginate @trips, renderer: BootstrapPagination::Rails %>
+        </a>
+      </li>
+    <% end %>
+    </ul>
+  </section>
+  <section class="paginator container d-flex justify-content-center">
+    <%= will_paginate @trips, renderer: BootstrapPagination::Rails %>
+  </section>
+</main>

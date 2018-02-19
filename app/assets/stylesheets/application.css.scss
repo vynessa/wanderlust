@@ -35,6 +35,21 @@ body {
   }
 }
 
+.page-content {
+  padding-top: 82px;
+}
+.page-title {
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+.section-title {
+  font-size: 32px;
+  color: $navbar-dark-blue;
+  font-weight: 300;
+  margin: 50px 0 10px;
+  letter-spacing: -1px;
+}
+
 .form-control {
   width: 100%;
   padding: 10px 20px;
@@ -113,10 +128,3 @@ a.button-pink {
     margin: 0;
   }
 }
-
-// .alert {
-//   display: block;
-//   width: 100%;
-//   margin: 0;
-//   padding: 0;
-// }
