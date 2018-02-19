@@ -92,3 +92,31 @@ a.button-pink {
 .form-label {
   @include form-label()
 }
+
+// ----------------------------------
+// Bootstrap Overrides:
+// ----------------------------------
+
+.navbar, .container, .navbar-header {
+  &::before, &::after {
+    content: none !important;
+  }
+}
+
+.options-bar {
+  background-color: $navbar-light-grey;
+  padding: 15px;
+
+  .title {
+    color: $navbar-dark-blue;
+    letter-spacing: -1px;
+    margin: 0;
+  }
+}
+
+// .alert {
+//   display: block;
+//   width: 100%;
+//   margin: 0;
+//   padding: 0;
+// }

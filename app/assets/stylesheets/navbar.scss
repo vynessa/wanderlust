@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 5;
   // margin: 0;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   padding: 15px 0;
   border-radius: 0 !important;
   background-color: $navbar-dark-blue;
@@ -25,25 +25,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    &, .container, .navbar-header {
-      &::before, &::after {
-        content: none !important;
-      }
-    }
     .navbar-header {
       width: 100%;
     }
-  }
-}
-
-.top-section {
-  height: 4em;
-  width: 100%;
-  background-color: $navbar-light-grey;
-
-  .trips-display-text {
-    color: $navbar-dark-blue;
-    padding: 4px;
-    letter-spacing: 1px;
   }
 }
