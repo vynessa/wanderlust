@@ -1,9 +1,49 @@
-.navbar-default {
-  background-color: #042852 !important;
-  border: none !important;
+@import "base";
+
+.navbar {
+  // position: fixed;
+  width: 100%;
+  z-index: 5;
+  // margin: 0;
+  margin-bottom: 0;
+  padding: 15px 0;
+  border-radius: 0 !important;
+  background-color: $navbar-dark-blue;
+  border: none;
+
+  &.outer {
+    padding: 50px 0;
+  }
+
+  .container .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+
+    .navbar-toggle .icon-bar {
+      background-color: $white;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &, .container, .navbar-header {
+      &::before, &::after {
+        content: none !important;
+      }
+    }
+    .navbar-header {
+      width: 100%;
+    }
+  }
 }
 
-.navbar-brand,
-.navbar-right li a {
-  color: #ffffff !important;
+.top-section {
+  height: 4em;
+  width: 100%;
+  background-color: $navbar-light-grey;
+
+  .trips-display-text {
+    color: $navbar-dark-blue;
+    padding: 4px;
+    letter-spacing: 1px;
+  }
 }
