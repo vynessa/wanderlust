@@ -12,7 +12,3 @@ $(document).ready ->
     google.maps.event.addDomListener window, 'load', initializeLocations
   
   $(document).on('turbolinks:load', initializeLocations)
-
-  # simulateCardClick = (link) ->
-  #   $(".card").click ->
-  #     window.location = link
