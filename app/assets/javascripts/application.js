@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+const simulateCardClick = (link) => {
+  return $(".card").click(() => {
+    return window.location = link;
+  });
+};

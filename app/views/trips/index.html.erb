@@ -1,34 +1,43 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Trips</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th>Departure date</th>
-      <th>Return date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<main class="page-content">
+  <div class="options-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="left-options">
+        <h3 class="title">My Trips</h3>
+      </div>
+      <div class="right-options">
+        <%= link_to 'CREATE TRIP', new_trip_path, class: "button-pink glyphicon-plus" %>
+      </div>
+    </div>
+  </div>
+  <section class="container">
+    <ul class="trip-list">
     <% @trips.each do |trip| %>
-      <tr>
-        <td><%= trip.name %></td>
-        <td><%= trip.description %></td>
-        <td><%= trip.location %></td>
-        <td><%= trip.departure_date %></td>
-        <td><%= trip.return_date %></td>
-        <td><%= link_to 'Show', trip %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li class="trip-card shadow">
+        <a class="card-body" href="/trips/<%= trip.id %>">
+          <div class="row">
+            <div class="col-12 col-md-6 detail">
+              <h6 class="title fat-text"><%= trip.name %></h6>
+              <p class="description"><%= trip.description %></p>
+            </div>
+            <div class="col-4 col-md-2 detail">
+              <h6 class="header">Location:</h6>
+              <p class="description"><%= trip.location %></p>
+            </div>
+            <div class="col-4 col-md-2 detail">
+              <h6 class="header">Dates:</h6>
+              <p class="description">Dept:&nbsp;<%= trip.departure_date %><br>Return:&nbsp;<%= trip.return_date %></p>
+            </div>
+            <div class="col-4 col-md-2 detail">
+              <h6 class="header">Budget:</h6>
+              <p class="description fat-text">$300</p>
+            </div>
+          </div>
+        </a>
+      </li>
     <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Trip', new_trip_path %><br />
-<%= will_paginate @trips, renderer: BootstrapPagination::Rails %>
+    </ul>
+  </section>
+  <section class="paginator container d-flex justify-content-center">
+    <%= will_paginate @trips, renderer: BootstrapPagination::Rails %>
+  </section>
+</main>

@@ -1,9 +1,32 @@
-.navbar-default {
-  background-color: #042852 !important;
-  border: none !important;
-}
+@import "base";
 
-.navbar-brand,
-.navbar-right li a {
-  color: #ffffff !important;
+.navbar {
+  position: fixed !important;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: 0 !important;
+  padding: 15px 0;
+  border-radius: 0 !important;
+  background-color: $navbar-dark-blue;
+  border: none;
+
+  &.outer {
+    padding: 50px 0;
+    position: relative !important;
+  }
+
+  .container .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+
+    .navbar-toggle .icon-bar {
+      background-color: $white;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navbar-header {
+      width: 100%;
+    }
+  }
 }

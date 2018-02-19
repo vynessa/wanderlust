@@ -23,6 +23,7 @@
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
+  display: inline-block;
 }
 
 @mixin nav-links($text-color: $white, $letter-spacing: 3px, $text-transform: uppercase) {

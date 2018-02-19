@@ -1,3 +1,80 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "base";
+
+.trip-list {
+  list-style: none;
+  padding: 50px 0;
+}
+
+.trip-card {
+  background-color: $white;
+  border: 1px solid $white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 50px 30px rgba($navbar-dark-blue, .05);
+  transition: .3s;
+
+  &:not(:first-child){
+    margin-top: 20px;
+  }
+
+  &:hover {
+    border-color: rgba($palette-pink, .2);
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+  .card-body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    text-decoration: none;
+    color: $navbar-dark-blue;
+    font-size: 12px;
+  }
+}
+
+.trip-details-bar {
+  background-color: $navbar-light-grey;
+  padding: 30px 0;
+  color: $navbar-dark-blue;
+}
+
+.trip-card, .trip-details-bar {
+  .detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail .header {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .detail .fat-text {
+    font-size: 2em;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 1.6em;
+    }
+  }
+}
+
+.trip-sub-items .card-body {
+  padding: 15px;
+}
+
+
+.paginator {
+  margin-bottom: 70px;
+}
+
+#notice {
+  color: black;
+}

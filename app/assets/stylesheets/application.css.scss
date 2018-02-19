@@ -35,6 +35,21 @@ body {
   }
 }
 
+.page-content {
+  padding-top: 82px;
+}
+.page-title {
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+.section-title {
+  font-size: 32px;
+  color: $navbar-dark-blue;
+  font-weight: 300;
+  margin: 50px 0 10px;
+  letter-spacing: -1px;
+}
+
 .form-control {
   width: 100%;
   padding: 10px 20px;
@@ -91,4 +106,25 @@ a.button-pink {
 
 .form-label {
   @include form-label()
+}
+
+// ----------------------------------
+// Bootstrap Overrides:
+// ----------------------------------
+
+.navbar, .container, .navbar-header {
+  &::before, &::after {
+    content: none !important;
+  }
+}
+
+.options-bar {
+  background-color: $navbar-light-grey;
+  padding: 15px;
+
+  .title {
+    color: $navbar-dark-blue;
+    letter-spacing: -1px;
+    margin: 0;
+  }
 }

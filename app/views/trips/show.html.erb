@@ -1,35 +1,42 @@
-<p id="notice"><%= notice %></p>
+<main class="page-content">
+  
+  <div class="trip-details-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 detail">
+          <h6 class="title fat-text"><%= @trip.name %></h6>
+          <p class="description"><%= @trip.description %></p>
+        </div>
+        <div class="col-4 col-md-2 detail">
+          <h6 class="header">Location:</h6>
+          <p class="description"><%= @trip.location %></p>
+        </div>
+        <div class="col-4 col-md-2 detail">
+          <h6 class="header">Dates:</h6>
+          <p class="description">Dept:&nbsp;<%= @trip.departure_date %><br>Return:&nbsp;<%= @trip.return_date %></p>
+        </div>
+        <div class="col-4 col-md-2 detail">
+          <h6 class="header">Budget:</h6>
+          <p class="description fat-text">$300</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @trip.name %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @trip.description %>
-</p>
+  <section class="container">
 
-<p>
-  <strong>Location:</strong>
-  <%= @trip.location %>
-</p>
+    <%= render "activities/index" %>
+    <%= render "budget_items/index" %>
 
-<p>
-  <strong>Departure date:</strong>
-  <%= @trip.departure_date %>
-</p>
+    <br/>
+    <br/>
 
-<p>
-  <strong>Return date:</strong>
-  <%= @trip.return_date %>
-</p>
+    <%= link_to 'View Trip', @trip %> | 
+    <%= link_to 'Edit Trip', edit_trip_path(@trip) %> |
+    <%= link_to 'Delete Trip', @trip, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+    <%= link_to 'Back', trips_path %>
 
-<%= render "activities/index" %>
-<%= render "budget_items/index" %>
-
-<br/>
-<br/>
-
-<%= link_to 'Edit', edit_trip_path(@trip) %> |
-<%= link_to 'Back', trips_path %>
+ </section>
+</main>
