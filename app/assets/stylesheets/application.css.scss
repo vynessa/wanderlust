@@ -65,6 +65,10 @@ body {
   }
 }
 
+.check-box {
+  margin-right: 14px;
+}
+
 //---------------------------
 // UTILITIES
 //---------------------------
@@ -126,5 +130,12 @@ a.button-pink {
     color: $navbar-dark-blue;
     letter-spacing: -1px;
     margin: 0;
+  }
+}
+
+#error_message {
+  .error-header, 
+  .error-li {
+    color: $black;
   }
 }

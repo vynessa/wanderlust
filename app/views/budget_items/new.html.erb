@@ -1,5 +1,7 @@
-<h1>New Budget Item</h1>
-
-<%= render 'form', budget_item: @budget_item, trip: @trip, url: trip_budget_items_path(@trip) %>
-
-<%= link_to 'Back', trip_path(@trip) %>
+<main class="page-content">
+  <section class="container">
+    <h1 class="section-title">New Budget Item</h1>
+    <%= render 'form', budget_item: @budget_item, trip: @trip, url: trip_budget_items_path(@trip) %>
+    <%= link_to 'Back', trip_path(@trip) %>
+  </section>
+</main>
