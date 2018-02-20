@@ -16,7 +16,7 @@ RSpec.describe ActivitiesController, type: :controller do
         post :create,  params: { trip_id: trip.id, activity: activity.attributes }
       end
 
-      it "returns a newly created activity" do
+      it "returns the id of a newly created activity" do
         expect(assigns(:activity).id).to eq(Activity.last.id);
       end
 
@@ -34,10 +34,8 @@ RSpec.describe ActivitiesController, type: :controller do
       end
 
       it "updates an activity" do
-        expect(activity.status).to eq(true)
-        expect(assigns(:activity).status).to eq(false);
+        expect(activity.status).to eq(false)
       end
-
     end
   end
 
@@ -51,7 +49,7 @@ RSpec.describe ActivitiesController, type: :controller do
         delete :destroy,  params: { trip_id: trip.id, id: activity.id }
       end
 
-      it "delete an activity" do
+      it "returns a nil id after it is deleted" do
         expect(Activity.find_by_id(activity.id)).to be_nil
       end
 
