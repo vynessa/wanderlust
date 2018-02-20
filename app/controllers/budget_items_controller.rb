@@ -1,13 +1,10 @@
 class BudgetItemsController < ApplicationController
-  before_action :set_budget_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_budget_item, only: [:edit, :update, :destroy]
   before_action :set_trip
   before_action :authenticate_user!
 
   # GET /budget_items
   def index; end
-
-  # GET /budget_items/:id
-  def show; end
 
   # GET /budget_items/new
   def new

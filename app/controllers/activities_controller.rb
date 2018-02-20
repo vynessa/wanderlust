@@ -1,13 +1,10 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :set_activity, only: [:edit, :update, :destroy]
   before_action :set_trip
   before_action :authenticate_user!
 
   # GET /activities
   def index; end
-
-  # GET /activities/:id
-  def show; end
 
   # GET /activities/new
   def new

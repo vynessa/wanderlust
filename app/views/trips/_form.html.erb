@@ -1,45 +1,44 @@
+<%= form_with(model: trip, :html => {:class => 'row'}, local: true) do |form| %>
+  <div class="col-12 col-md-6">
+    <% if trip.errors.any? %>
+      <div id="error_message">
+        <h2 class="section-title error-header"><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
 
-    <%= form_with(model: trip, :html => {:class => 'row'}, local: true) do |form| %>
-      <div class="col-12 col-md-6">
-        <% if trip.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
-
-            <ul>
-            <% trip.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div>
+        <ul>
+        <% trip.errors.full_messages.each do |message| %>
+          <li class="error-li"><%= message %></li>
         <% end %>
-
-        <div class="form-group">
-          <%= form.label :name %>
-          <%= form.text_field :name, id: :trip_name, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :description %>
-          <%= form.text_field :description, id: :trip_description, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :location %>
-          <%= form.text_field :location, id: :trip_location, class: "form-control" %>
-        </div>
-
-        <div class="form-group field">
-          <%= form.label :departure_date %>
-          <%= form.date_field :departure_date, id: :trip_departure_date, class: "form-control" %>
-        </div>
-
-        <div class="form-group field">
-          <%= form.label :return_date %>
-          <%= form.date_field :return_date, id: :trip_return_date, class: "form-control" %>
-        </div>
-
-        <div class="actions button-pink">
-          <%= form.submit %>
-        </div>
+        </ul>
       </div>
     <% end %>
+
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :trip_name, class: "form-control", placeholder: "Enter trip name" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_field :description, id: :trip_description, class: "form-control", placeholder: "Enter trip description" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :location %>
+      <%= form.text_field :location, id: :trip_location, class: "form-control", placeholder: "Enter a location" %>
+    </div>
+
+    <div class="form-group field">
+      <%= form.label :departure_date %>
+      <%= form.date_field :departure_date, id: :trip_departure_date, class: "form-control", placeholder: "Enter departure date" %>
+    </div>
+
+    <div class="form-group field">
+      <%= form.label :return_date %>
+      <%= form.date_field :return_date, id: :trip_return_date, class: "form-control", placeholder: "Enter return date" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>
