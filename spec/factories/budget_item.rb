@@ -1,8 +1,8 @@
 FactoryBot.define do
-  factory :budget_items do |f|
-    f.item { Faker::StarWars.character }
-    f.description { Faker::Lorem.sentence(10) }
-    f.cost { Faker::Number.number(10) }
-    f.trip_id
+  factory :budget_item do
+    item { Faker::StarWars.character }
+    description { Faker::Lorem.sentence(10) }
+    cost { Faker::Number.number(4) }
+    trip
   end
 end

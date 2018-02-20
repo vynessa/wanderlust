@@ -68,3 +68,6 @@ jobs:
     general:
       artifacts:
         - "coverage"
+
+    post:
+      - cat ./coverage/lcov.info
