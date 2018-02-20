@@ -1,6 +1,6 @@
 <h3 class="section-title">Activities</h3>
 <ul class="trip-list trip-sub-items">
-    <% @activities.each do |activity| %>
+    <% if @activities.each do |activity| %>
       <li class="trip-card">
         <div class="card-body row d-flex align-items-center">
           <div class="col-4 detail">
@@ -17,6 +17,8 @@
           </div>
         </div>
       </li>
+    <% end.empty? %>
+      <h6 class="title fat-text">No activity here. Create a new activity</h6>
     <% end %>
 </ul>
 <%= link_to 'New Activity', new_trip_activity_path(@trip) %>

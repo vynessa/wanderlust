@@ -11,7 +11,7 @@
   </div>
   <section class="container">
     <ul class="trip-list">
-    <% @trips.each do |trip| %>
+    <% if @trips.each do |trip| %>
       <li class="trip-card shadow">
         <a class="card-body" href="/trips/<%= trip.id %>">
           <div class="row">
@@ -34,6 +34,8 @@
           </div>
         </a>
       </li>
+    <% end.empty? %>
+      <h1 class="title fat-text">No trips here. Create a trip</h1>
     <% end %>
     </ul>
   </section>

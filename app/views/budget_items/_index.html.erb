@@ -1,6 +1,6 @@
 <h3 class="section-title">Budget Items</h3>
 <ul class="trip-list trip-sub-items">
-    <% @budget_items.each do |budget_item| %>
+    <% if @budget_items.each do |budget_item| %>
       <li class="trip-card">
         <div class="card-body row d-flex align-items-center">
           <div class="col-2 detail">
@@ -21,6 +21,8 @@
           </div>
         </div>
       </li>
+    <% end.empty? %>
+      <h6 class="title fat-text">No budget item here. Create a new budget item</h6>
     <% end %>
 </ul>
 <%= link_to 'New Budget Item', new_trip_budget_item_path(@trip) %>
