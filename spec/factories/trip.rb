@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :trip do
     name { Faker::StarWars.character }
     description { Faker::Lorem.sentence(10) }
-    location "Lagos, Nigeria"
+    location "Lagos, Ikeja"
     departure_date Date.today
     return_date Date.today + 10.days
     user
