@@ -26,16 +26,19 @@ describe "Trips", :type => :feature do
     expect(page).to have_content 'Wakanda with Andela'
     find("a.card-body").click
     expect(page).to have_content 'New Activity'
-    click_on 'New Activity'
-    expect(page).to have_content 'New Activity'
-    fill_in('Title', :with => 'See Wakanda movie')
-    click_on 'Create Activity'
-    expect(page).to have_content 'Activities'
-    expect(page).to have_content 'See Wakanda movie'
-    click_on 'Edit Activity'
-    fill_in('Title', :with => 'See Jumanji')
-    click_on 'Update Activity'
-    expect(page).to have_content 'Activity was successfully updated.'
-    expect(page).to have_content 'Jumanji'
+    click_on 'New Budget Item'
+    expect(page).to have_content 'New Budget Item'
+    fill_in('Item', :with => 'My Budget')
+    fill_in('Description', :with => 'Make sense budget')
+    fill_in('Cost', :with => '200000')
+    click_on 'Create Budget item'
+    expect(page).to have_content 'Budget item was successfully created.'
+    click_on 'Edit Budget Item'
+    fill_in('Item', :with => 'New Budget')
+    fill_in('Description', :with => 'A new budget')
+    fill_in('Cost', :with => '200')
+    click_on 'Update Budget item'
+    expect(page).to have_content 'Budget item was successfully updated.'
+    expect(page).to have_content 'New Budget'
   end
 end

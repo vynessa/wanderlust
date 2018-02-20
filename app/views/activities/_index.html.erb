@@ -12,8 +12,8 @@
             <p class="description "><%= activity.status %></p>
           </div>
           <div class="col-4 d-flex justify-content-between">
-            <%= link_to 'Edit', edit_trip_activity_path(@trip, activity) %>
-            <%= link_to 'Delete', trip_activity_path(@trip, activity), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit Activity', edit_trip_activity_path(@trip, activity) %>
+            <%= link_to 'Delete Activity', trip_activity_path(@trip, activity), method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
       </li>

@@ -16,8 +16,8 @@
             <p class="description"><%= budget_item.cost %></p>
           </div>
           <div class="col-4 d-flex justify-content-between">
-            <%= link_to 'Edit', edit_trip_budget_item_path(@trip, budget_item) %>
-            <%= link_to 'Delete', trip_budget_item_path(@trip, budget_item), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit Budget Item', edit_trip_budget_item_path(@trip, budget_item) %>
+            <%= link_to 'Delete Budget Item', trip_budget_item_path(@trip, budget_item), method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
       </li>
