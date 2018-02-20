@@ -30,15 +30,15 @@
 
         <div class="form-group field">
           <%= form.label :departure_date %>
-          <%= form.date_select :departure_date, id: :trip_departure_date, class: "form-control" %>
+          <%= form.date_field :departure_date, id: :trip_departure_date, class: "form-control" %>
         </div>
 
         <div class="form-group field">
           <%= form.label :return_date %>
-          <%= form.date_select :return_date, id: :trip_return_date, class: "form-control" %>
+          <%= form.date_field :return_date, id: :trip_return_date, class: "form-control" %>
         </div>
 
-        <div class="actions">
+        <div class="actions button-pink">
           <%= form.submit %>
         </div>
       </div>
